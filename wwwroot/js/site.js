@@ -2,24 +2,17 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your Javascript code.
-function calculateGrades()
-{
+$("#calculateGrades").click( function () {
     var maxAssignments = 0.50;
     var maxProjects = 0.10;
     var maxQuizzes = 0.10;
     var maxExams = 0.20;
     var maxIntex = 0.10;
 
-    var assignmentScore = document.getElementById('assignments').value;
-    var projectScore = document.getElementById('projects').value;
-    var quizScore = document.getElementById('quizzes').value;
-    var examScore = document.getElementById('exams').value;
-    var intexScore = document.getElementById('intex').value;
-
     var overallScore = 0.0;
-    var letterGrade = 'A';
+    var letterGrade = "A";
 
-    overallScore = (assignmentScore * maxAssignments) + (projectScore * maxProjects) + (quizScore * maxQuizzes) + (examScore * maxExams) + (intexScore * maxIntex);
+    overallScore = ($("#assignments").value * maxAssignments) + ($("#projects").value * maxProjects) + ($("#quizzes").value * maxQuizzes) + ($("#exams").value * maxExams) + ($("#intex").value * maxIntex);
 
     if (overallScore >= 94) {
         letterGrade = 'A';
@@ -61,4 +54,5 @@ function calculateGrades()
     // the line below executes then disappears because page refreshes
     //document.getElementById('output').innerHTML = 'Your overall score is ' + overallScore + '. You received a(n) ' + letterGrade + ' as your final grade.';
     alert('Your overall score is ' + overallScore + '. You received a(n) ' + letterGrade + ' as your final grade.');
-}
+
+});

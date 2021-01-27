@@ -23,14 +23,34 @@ namespace Assignment_1
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddRazorPages();
+            services.AddControllersWithViews();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            app.UseDefaultFiles();
+
+            if (env.IsEnvironment("Development"))
+            {
+                app.UseDeveloperExceptionPage();
+            }
+            else
+            {
+                //Add Error Page
+            }
+            
+            //Serves static files from node_modules ASP.NET Core
+            app.UseNodeModules();
+
+
             app.UseStaticFiles();
+            app.UseRouting();
+            app.UseEndpoints(cfg =>
+            {
+                cfg.MapControllerRoute("Default", 
+                    "{controller}/{action}/{id?}",
+                    new { controller = "Main", action = "Index"});
+            });
         }
     }
 }

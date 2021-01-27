@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <link href="/css/site.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    <script src="~/js/site.js"></script>
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Mitch Rogers</h1>
+        <menu>
+            <ul>
+                <li><a asp-controller="Main" asp-action="Index">Home</a></li>
+                <li><a asp-controller="Main" asp-action="GradeCalc">Grade Calculator</a></li>
+            </ul>
+        </menu>
+    </header>
+
+    @RenderBody()
+
+    <footer>
+        <h5>This is the footer</h5>
+    </footer>
+</body>
+</html>

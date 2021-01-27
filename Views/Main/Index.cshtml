@@ -1,13 +1,11 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <title>413 - Assignment 1</title>
-    <link href="/css/site.css" rel="stylesheet" />
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
-    <script src="js/site.js"></script>
-</head>
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "413 - Assignment 1";
+}
+
 <body>
-    <h1>Mitch Rogers</h1>
     <img src="img/w.jpg" class="weddingpic" />
     <img src="img/J and R.jpg" class="twinpic" />
     <h5>Spending time with my wife, Hailey, and our two beautiful daughters, Jovi and Rayen.</h5><br />
@@ -25,21 +23,6 @@
         <li>Data Analyst/Engineer</li>
         <li>Consulting</li>
     </ul><br />
-    <h3>Grade Calculator</h3>
-    <h5>Enter your scores for each course section below.</h5>
-    <form>
-        <label>Assignments</label>
-        <input id="assignments" placeholder="99" /> / 100%<br /><br />
-        <label>Group Project</label>
-        <input id="projects" placeholder="99" /> / 100%<br /><br />
-        <label>Quizzes</label>
-        <input id="quizzes" placeholder="99" /> / 100%<br /><br />
-        <label>Exams</label>
-        <input id="exams" placeholder="99" /> / 100%<br /><br />
-        <label>INTEX</label>
-        <input id="intex" placeholder="99" /> / 100%<br /><br />
-        <button type="submit" onclick="calculateGrades()">Submit Grades</button>
-    </form>
     <br /><br />
     <!--<p id="output"></p>-->
 </body>
