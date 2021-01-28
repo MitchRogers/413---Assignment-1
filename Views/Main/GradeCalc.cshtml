@@ -2,24 +2,32 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
+    // Sets values to the razor code from _Layout shared page
     ViewBag.Title = "413 - Grade Calculator";
+    ViewBag.Header = "Mitch Rogers";
 }
 
+@model GradeCalcModel 
+
 <body>
+    <!-- pull in js script -->
     <script src="~/js/site.js"></script>
     <h3>Grade Calculator</h3>
     <h5>Enter your scores for each course section below.</h5>
-    <form>
+    <!-- form to collect all the grade information -->
+    <form method="post">
         <label>Assignments</label>
-        <input id="assignments" placeholder="99" /> / 100%<br /><br />
+        <input type="number" id="assignments" asp-for="assignments" placeholder="99" /> / 100%<br /><br />
         <label>Group Project</label>
-        <input id="projects" placeholder="99" /> / 100%<br /><br />
+        <input type="number" id="projects" asp-for="projects" placeholder="99" /> / 100%<br /><br />
         <label>Quizzes</label>
-        <input id="quizzes" placeholder="99" /> / 100%<br /><br />
+        <input type="number" id="quizzes" asp-for="quizzes" placeholder="99" /> / 100%<br /><br />
         <label>Exams</label>
-        <input id="exams" placeholder="99" /> / 100%<br /><br />
+        <input type="number" id="exams" asp-for="exams" placeholder="99" /> / 100%<br /><br />
         <label>INTEX</label>
-        <input id="intex" placeholder="99" /> / 100%<br /><br />
-        <input type="submit" id="calculateGrades" value="Submit Grades" />
+        <input type="number" id="intex" asp-for="intex" placeholder="99" /> / 100%<br /><br />
+        <!--use the id value in jquery to access the value/button-->
+        <div asp-validation-summary="All"></div>
+        <input type="submit" class="gradebtn" id="calculateGrades" value="Calculate Grades" />
     </form>
 </body>

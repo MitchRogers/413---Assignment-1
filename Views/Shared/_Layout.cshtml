@@ -1,15 +1,14 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+    <!--'ViewBag.Title is razor code - see cshtml pages for specifications on Title and Headers-->
     <title>@ViewBag.Title</title>
     <link href="/css/site.css" rel="stylesheet" />
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
-    <script src="~/js/site.js"></script>
-    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
 </head>
 <body>
     <header>
-        <h1>Mitch Rogers</h1>
+        <h1>@ViewBag.Header</h1>
         <menu>
             <ul>
                 <li><a asp-controller="Main" asp-action="Index">Home</a></li>
@@ -18,7 +17,12 @@
         </menu>
     </header>
 
+    <!--RenderBody allows connected cshtml pages to fill in the content of the page-->
     @RenderBody()
+
+    <!--Accesses jquery through min.js file-->
+    <script src="~/js/jquery-3.5.1.min.js"></script>
+    <script src="~/js/site.js"></script>
 
     <footer>
         <h5>This is the footer</h5>

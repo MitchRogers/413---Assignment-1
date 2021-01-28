@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Assignment_1.Models;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,14 @@ namespace Assignment_1.Controllers
             return View();
         }
 
+        [HttpGet("GradeCalc")]
         public IActionResult GradeCalc()
+        {
+            return View();
+        }
+
+        [HttpPost("GradeCalc")]
+        public IActionResult GradeCalc(GradeCalcModel model)
         {
             return View();
         }
